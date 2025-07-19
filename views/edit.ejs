@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit: <%= letter.title %></title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <h1>Edit Letter</h1>
+  <form action="/letters/<%= letter._id %>?_method=PUT" method="POST">
+    <input type="text" name="title" value="<%= letter.title %>" required><br><br>
+    <textarea name="body" rows="10" cols="40" required><%= letter.body %></textarea><br><br>
+    <button type="submit">Update Letter</button>
+  </form>
+  <br>
+  <a href="/letters/<%= letter._id %>">← Back to Letter</a>
+</body>
+</html>

@@ -1,0 +1,85 @@
+/* Reset some defaults */
+body, h1, h2, p, ul, li, form, input, textarea, button {
+  margin: 0;
+  padding: 0;
+  font-family: 'Georgia', serif;
+}
+
+body {
+  background: #fbeaec; /* soft romantic blush tone */
+  color: #4a2c2a;
+  padding: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+h1 {
+  font-family: 'Georgia', serif;
+  font-size: 2.8rem;
+  color: #8b2e45; /* deeper romantic red */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+a {
+  color: #b3425d;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  list-style-type: none;
+  margin-top: 20px;
+}
+
+li {
+  background: #fff0f3; /* softer card background */
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(179, 66, 93, 0.15); /* subtle romantic shadow */
+}
+
+strong {
+  font-size: 1.2rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+input[type="text"], textarea {
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #d4a5a5;
+  background-color: #fff6f8;
+  font-family: 'Georgia', serif;
+  font-size: 1rem;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  background-color: #b3425d; /* rosewood */
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #972e48;
+}

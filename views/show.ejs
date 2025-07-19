@@ -1,0 +1,17 @@
+<!-- views/show.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title><%= letter.title %> - Letter to My Wife</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <h1><%= letter.title %></h1>
+  <p><%= letter.body %></p>
+  <small>Written on <%= letter.date.toDateString() %></small>
+  <br><br>
+  <a href="/">← Back to all letters</a>
+</body>
+</html>

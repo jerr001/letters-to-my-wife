@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Letters to My Wife</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <h1>Letters to My Wife</h1>
+
+  <nav>
+    <a href="/letters/new">Write a New Letter</a>
+  </nav>
+
+  <ul>
+    <% letters.forEach(letter => { %>
+      <li>
+        <a href="/letters/<%= letter._id %>">
+          <strong><%= letter.title %></strong>
+        </a><br>
+        <small><%= letter.date.toDateString() %></small>
+      </li>
+    <% }) %>
+  </ul>
+</body>
+</html>
