@@ -3,11 +3,15 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
+const { marked } = require('marked');
+
 const path = require('path');
 
 const Letter = require('./models/Letter');
 
 const app = express();
+
+app.locals.marked = marked;
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI)
@@ -19,6 +23,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 app.set('view engine', 'ejs');
+
+// Make `marked` available in all EJS templates
+app.locals.marked = marked;
 
 // Routes
 

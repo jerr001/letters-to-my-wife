@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title><%= letter.title %></title>
   <link rel="stylesheet" href="/css/styles.css" />
 </head>
 <body>
   <h1><%= letter.title %></h1>
   <p><em>Written on <%= letter.date.toDateString() %></em></p>
-  <p><%= letter.body %></p>
+
+  <!-- Markdown-rendered body content -->
+  <div class="letter-body">
+    <%- marked(letter.body) %>
+  </div>
+
   <br>
   <a href="/">← Back to Letters</a> |
   <a href="/letters/<%= letter._id %>/edit">Edit</a> |
