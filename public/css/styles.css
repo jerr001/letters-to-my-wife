@@ -6,13 +6,13 @@ body, h1, h2, p, ul, li, form, input, textarea, button {
 }
 
 body {
-  background: #fbeaec; /* soft romantic blush tone */
+  background: #fbeaec;
   color: #4a2c2a;
   padding: 20px;
   max-width: 700px;
   margin: 0 auto;
   line-height: 1.6;
-  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-x: hidden;
 }
 
 h1 {
@@ -88,6 +88,7 @@ button {
   font-size: 1.1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  touch-action: manipulation; /* Better mobile tap response */
 }
 
 button:hover {
@@ -180,12 +181,14 @@ button:hover {
     font-size: 2rem;
   }
 
-  input[type="text"], textarea {
+  input[type="text"],
+  textarea,
+  button {
     font-size: 16px;
+    width: 100%;
   }
 
   button {
-    font-size: 1rem;
     padding: 10px;
   }
 
@@ -219,10 +222,11 @@ button:hover {
     width: 100%;
   }
 
-  textarea {
+  textarea,
+  input[type="text"],
+  button {
     font-size: 16px;
-    min-height: 140px;
-    max-height: 55vh;
+    width: 100%;
   }
 
   form {
