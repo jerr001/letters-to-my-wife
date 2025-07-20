@@ -6,13 +6,13 @@ body, h1, h2, p, ul, li, form, input, textarea, button {
 }
 
 body {
-  background: #fbeaec;
+  background: #fbeaec; /* soft romantic blush tone */
   color: #4a2c2a;
   padding: 20px;
   max-width: 700px;
   margin: 0 auto;
   line-height: 1.6;
-  overflow-x: hidden;
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 h1 {
@@ -210,26 +210,41 @@ button:hover {
 }
 
 @media (max-width: 480px) {
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
   body {
-    padding: 10px;
-  }
-
-  h1 {
-    font-size: 1.7rem;
-  }
-
-  button {
-    width: 100%;
-  }
-
-  textarea,
-  input[type="text"],
-  button {
-    font-size: 16px;
-    width: 100%;
+    max-width: 100%;
+    padding: 0;
   }
 
   form {
-    padding: 0 5px;
+    margin: 0;
+    padding: 0 10px;
+    height: 100vh; /* full viewport height */
+    display: flex;
+    flex-direction: column;
+  }
+
+  textarea {
+    flex: 1; /* fill vertical space */
+    width: 100%;
+    font-size: 16px;
+    padding: 15px;
+    box-sizing: border-box;
+    min-height: 0;
+    max-height: none;
+    resize: none;
+  }
+
+  button {
+    width: 100%;
+    font-size: 18px;
+    padding: 15px;
+    margin-top: 10px;
+    flex-shrink: 0;
   }
 }
