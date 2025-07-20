@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="/css/styles.css" />
 </head>
 <body>
+  <div class="container">
   <main>
     <h1>Edit Letter</h1>
     <form action="/letters/<%= letter._id %>?_method=PUT" method="POST">
@@ -17,5 +18,6 @@
     <br>
     <a href="/letters/<%= letter._id %>">← Back to Letter</a>
   </main>
+  </div>
 </body>
 </html>

@@ -5,12 +5,20 @@ body, h1, h2, p, ul, li, form, input, textarea, button {
   font-family: 'Georgia', serif;
 }
 
-body {
-  background: #fbeaec; /* soft romantic blush tone */
-  color: #4a2c2a;
-  padding: 20px;
+/* Container wrapper to add consistent margin/padding */
+.container {
   max-width: 700px;
   margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #fbeaec; /* soft romantic blush tone */
+  color: #4a2c2a;
+  font-family: 'Georgia', serif;
   line-height: 1.6;
   overflow-x: hidden; /* Prevent horizontal scroll */
 }
@@ -18,7 +26,7 @@ body {
 h1 {
   font-family: 'Georgia', serif;
   font-size: 2.8rem;
-  color: #8b2e45;
+  color: #8b2e45; /* deeper romantic red */
   margin-bottom: 20px;
   text-align: center;
 }
@@ -39,11 +47,11 @@ ul {
 }
 
 li {
-  background: #fff0f3;
+  background: #fff0f3; /* softer card background */
   padding: 15px;
   margin-bottom: 10px;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(179, 66, 93, 0.15);
+  box-shadow: 0 2px 4px rgba(179, 66, 93, 0.15); /* subtle romantic shadow */
 }
 
 strong {
@@ -80,7 +88,7 @@ textarea {
 }
 
 button {
-  background-color: #b3425d;
+  background-color: #b3425d; /* rosewood */
   color: white;
   border: none;
   padding: 12px;
@@ -219,6 +227,10 @@ button:hover {
   body {
     max-width: 100%;
     padding: 0;
+  }
+
+  .container {
+    padding: 10px 15px;
   }
 
   form {
