@@ -18,7 +18,7 @@ body {
 h1 {
   font-family: 'Georgia', serif;
   font-size: 2.8rem;
-  color: #8b2e45; /* deeper romantic red */
+  color: #8b2e45;
   margin-bottom: 20px;
   text-align: center;
 }
@@ -39,11 +39,11 @@ ul {
 }
 
 li {
-  background: #fff0f3; /* softer card background */
+  background: #fff0f3;
   padding: 15px;
   margin-bottom: 10px;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(179, 66, 93, 0.15); /* subtle romantic shadow */
+  box-shadow: 0 2px 4px rgba(179, 66, 93, 0.15);
 }
 
 strong {
@@ -55,7 +55,7 @@ form {
   flex-direction: column;
   margin-top: 20px;
   max-width: 100%;
-  padding: 0 10px; /* Added padding so form inputs don't touch edges on mobile */
+  padding: 0 10px;
   box-sizing: border-box;
 }
 
@@ -66,24 +66,21 @@ input[type="text"], textarea {
   border: 1px solid #d4a5a5;
   background-color: #fff6f8;
   font-family: 'Georgia', serif;
-  font-size: 16px; /* Increased to 16px to prevent mobile zoom */
+  font-size: 16px; /* Prevent zoom on mobile */
   box-sizing: border-box;
-  width: 100%; /* Full width on mobile */
+  width: 100%;
   line-height: 1.4;
-  /* For textarea only */
-  /* For input[type="text"] this doesn't affect */
 }
 
 textarea {
   resize: vertical;
   min-height: 150px;
-  max-height: 60vh; /* limit max height to 60% of viewport */
+  max-height: 60vh;
   overflow-y: auto;
-  font-size: 16px; /* enforce font-size again */
 }
 
 button {
-  background-color: #b3425d; /* rosewood */
+  background-color: #b3425d;
   color: white;
   border: none;
   padding: 12px;
@@ -184,7 +181,7 @@ button:hover {
   }
 
   input[type="text"], textarea {
-    font-size: 16px; /* maintain 16px font size on tablets too */
+    font-size: 16px;
   }
 
   button {
@@ -222,14 +219,13 @@ button:hover {
     width: 100%;
   }
 
-  /* Additional mobile textarea tweaks */
   textarea {
-    font-size: 16px; /* prevent zoom */
+    font-size: 16px;
     min-height: 140px;
     max-height: 55vh;
   }
 
   form {
-    padding: 0 5px; /* reduce padding on very small screens */
+    padding: 0 5px;
   }
 }
