@@ -1,22 +1,29 @@
+// Load environment variables from .env file
 require('dotenv').config();
+
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const { marked } = require('marked');
-
 const path = require('path');
-
 const Letter = require('./models/Letter');
 
 const app = express();
 
+// Make `marked` available in all EJS templates
 app.locals.marked = marked;
 
-// Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log('MongoDB connected'))
-  .catch(err => console.log(err));
+// MongoDB Connection
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+.then(() => console.log('✅ MongoDB connected'))
+.catch(err => {
+  console.error('❌ MongoDB connection error:', err.message);
+  process.exit(1);
+});
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -24,12 +31,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 app.set('view engine', 'ejs');
 
-// Make `marked` available in all EJS templates
-app.locals.marked = marked;
+// ROUTES
 
-// Routes
-
-// List all letters
+// Home - List all letters
 app.get('/', async (req, res) => {
   try {
     const letters = await Letter.find().sort({ date: -1 });
@@ -40,12 +44,12 @@ app.get('/', async (req, res) => {
   }
 });
 
-// Show form to write new letter
+// Form - New letter
 app.get('/letters/new', (req, res) => {
   res.render('new');
 });
 
-// Create new letter
+// Create - Save new letter
 app.post('/letters', async (req, res) => {
   try {
     const { title, body } = req.body;
@@ -58,7 +62,7 @@ app.post('/letters', async (req, res) => {
   }
 });
 
-// Show single letter
+// View - Single letter
 app.get('/letters/:id', async (req, res) => {
   try {
     const letter = await Letter.findById(req.params.id);
@@ -70,7 +74,7 @@ app.get('/letters/:id', async (req, res) => {
   }
 });
 
-// Show edit form
+// Form - Edit letter
 app.get('/letters/:id/edit', async (req, res) => {
   try {
     const letter = await Letter.findById(req.params.id);
@@ -105,8 +109,8 @@ app.delete('/letters/:id', async (req, res) => {
   }
 });
 
-// Start server
+// Server start
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+  console.log(`🚀 Server running at http://localhost:${PORT}`);
 });

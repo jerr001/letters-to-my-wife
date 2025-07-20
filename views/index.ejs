@@ -6,22 +6,24 @@
   <title>Letters to My Wife</title>
   <link rel="stylesheet" href="/css/styles.css" />
 </head>
-<body>
-  <h1>Letters to My Wife</h1>
+<body class="index-page">
+  <div class="container">
+    <h1>Letters to My Wife</h1>
 
-  <nav>
-    <a href="/letters/new">Write a New Letter</a>
-  </nav>
+    <nav>
+      <a href="/letters/new">Write a New Letter</a>
+    </nav>
 
-  <ul>
-    <% letters.forEach(letter => { %>
-      <li>
-        <a href="/letters/<%= letter._id %>">
-          <strong><%= letter.title %></strong>
-        </a><br>
-        <small><%= letter.date.toDateString() %></small>
-      </li>
-    <% }) %>
-  </ul>
+    <ul>
+      <% letters.forEach(letter => { %>
+        <li>
+          <a href="/letters/<%= letter._id %>">
+            <strong><%= letter.title %></strong>
+          </a><br>
+          <small><%= letter.date.toDateString() %></small>
+        </li>
+      <% }) %>
+    </ul>
+  </div>
 </body>
 </html>

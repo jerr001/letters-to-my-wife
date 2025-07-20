@@ -4,14 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
   <title>Write Letter</title>
+  <link rel="stylesheet" href="/css/styles.css" />
 </head>
 <body>
-  <h1>Write a New Letter</h1>
-  <form action="/write" method="POST">
-    <input type="text" name="title" placeholder="Title" required /><br /><br />
-    <textarea name="body" placeholder="Write your letter here..." rows="10" cols="30" required></textarea><br /><br />
-    <button type="submit">Save Letter</button>
-  </form>
-  <a href="/">Back to Letters</a>
+  <main>
+    <h1>Write a New Letter</h1>
+    <form action="/write" method="POST">
+      <input type="text" name="title" placeholder="Title" required /><br /><br />
+      <textarea name="body" placeholder="Write your letter here..." rows="10" cols="30" required></textarea><br /><br />
+      <button type="submit">Save Letter</button>
+    </form>
+    <br />
+    <a href="/">← Back to Letters</a>
+  </main>
 </body>
 </html>
